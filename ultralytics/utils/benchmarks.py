@@ -237,7 +237,9 @@ class ProfileModels:
                 continue
 
             t_engine = self.profile_tensorrt_model(str(engine_file))
-            t_onnx = self.profile_onnx_model(str(onnx_file))
+            print(t_engine)
+            # t_onnx = self.profile_onnx_model(str(onnx_file))
+            t_onnx = [0, 0]
             table_rows.append(self.generate_table_row(file.stem, t_onnx, t_engine, model_info))
             output.append(self.generate_results_dict(file.stem, t_onnx, t_engine, model_info))
 
